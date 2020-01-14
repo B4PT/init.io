@@ -14,5 +14,23 @@ if (tempCel<20){
   alert("Il caille !");
     }
   
-//null
+//switch
+  const meteo = prompt("Quel temps fait-il dehors ?");
+switch (meteo) {
+  case "soleil":
+    alert("Sortez en t-shirt.");
+    break;
+  case "vent":
+    alert("Sortez en pull.");
+    break;
+  case "pluie":
+    alert("Sortez en blouson.");
+    break;
+  case "neige":
+    alert("Restez au chaud à la maison.");
+    break;
+  default:
+    alert("Je n'ai pas compris !");
+}
+
 </script>
