@@ -6,10 +6,13 @@ prenom = prompt("Entrez votre prénom :");
 alert(`Bonjour, ${prenom}.`);
 
 // convertir celsius en fahrenheit
-tempCel = prompt('Entrez une température en °C');
+tempCel = prompt("Entrez une température en °C");
 tempFar = Number(tempCel)*9/5+32;
 console.log(tempFar);
 alert(`${tempCel}°C donne ${tempFar}°F`);
+if (tempCel<20){
+  alert("Il caille !");
+    }
   
 //null
 </script>
