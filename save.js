@@ -137,3 +137,47 @@ console.log(milou.decrire());
 // "Tiens, un chat ! Milou aboie : Wouaf ! Wouaf !"
 console.log(`Tiens, un chat ! ${milou.nom} aboie : ${milou.aboyer()}`);
 
+
+// Ajoutez votre code ici
+class Personnage {
+  constructor (nom, sante, force){
+    this.nom = nom;
+    this.sante = sante;
+    this.force = force;
+    this.xp = 0;
+    this.or = 10;
+    this.cle = 1;
+  }
+  decrire(){
+    return `${this.nom} a ${this.sante} points de vie, ${this.force} en force et ${this.xp} points d'éxperience, ${this.or} pièces d'or et ${this.cle} clé(s)`;
+  }
+  attaquer(cible){
+    if (this.sante>0){
+      cible.sante-=this.force;
+      if (cible.sante<=0){
+        console.log(`${cible.nom} est dead !`);
+        this.xp+=10;
+        this.or+=10;
+        this.cle+=1;
+      }
+    }
+    else {
+          console.log(`${this.nom} est dead et ne peut donc pas attaquer...`);
+    }
+  }
+}
+
+// "Aurora a 150 points de vie, 25 en force et 0 points d'expérience, 10 pièces d'or et 1 clé(s)"
+const aurora = new Personnage("Aurora", 150, 25);
+
+console.log(aurora.decrire());
+
+const monstre = new Personnage("ZogZog", 20, 10);
+console.log(monstre.decrire());
+
+monstre.attaquer(aurora);
+aurora.attaquer(monstre); // Le monstre est tué
+
+// "Aurora a 140 points de vie, 25 en force et 10 points d'expérience, 20 pièces d'or et 2 clé(s)"
+console.log(aurora.decrire());
+
