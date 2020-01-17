@@ -89,3 +89,19 @@ console.log(estPalindrome("KAYAk")); // true
 console.log(estPalindrome("Bora-Bora")); // false
 
 
+class MaClasse {
+  constructor(param1, param2 /* ... */) {
+    this.propriete1 = param1;
+    this.propriete2 = param2;
+    // ...
+  }
+  methode1(/* ... */) {
+    // ...
+  }
+  methode2(/* ... */) {
+    // ...
+  }
+  // ...
+}
+
+const monObjet = new MaClasse(arg1, arg2, ...);
