@@ -181,3 +181,41 @@ aurora.attaquer(monstre); // Le monstre est tué
 // "Aurora a 140 points de vie, 25 en force et 10 points d'expérience, 20 pièces d'or et 2 clé(s)"
 console.log(aurora.decrire());
 
+
+// Ajoutez votre code ici
+class Compte {
+  constructor(titulaire){
+    this.titulaire = titulaire;
+    this.solde = 0;
+  }
+  crediter(montant){
+    this.solde+=montant;
+  }
+  decrire(){
+    return `${this.titulaire} a un solde de ${this.solde} sur son compte bancaire !`;
+  }
+}
+
+const alex = new Compte("Alex");
+const clovis = new Compte("Clovis");
+const marco = new Compte("Marco");
+
+const comptes=[alex,clovis,marco];
+
+const etatDesComptes = () => {
+  for (compte of comptes){
+    console.log(compte.decrire());
+  }
+}
+
+etatDesComptes();
+
+for (compte of comptes){
+  compte.crediter(1000);
+}
+
+etatDesComptes();
+
+
+
+
