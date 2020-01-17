@@ -67,3 +67,25 @@ console.log(convertirMotLeet("Noob")); // "N008"
 console.log(convertirMotLeet("Hacker")); // "H4ck3r"
 
 
+// AJoutez votre code ici
+const estPalindrome = mot => {
+  let result=false;
+  let motInverse="";
+  for (let i=0;i<mot.length;i++){
+    
+    motInverse= mot[i] + motInverse;
+  }
+
+  //console.log(motInverse.toLowerCase());
+  //console.log(mot.toLowerCase());
+  if (motInverse.toLowerCase()===mot.toLowerCase()){
+    result=true;
+  }
+  return  result;
+}
+
+console.log(estPalindrome("RadAr")); // true
+console.log(estPalindrome("KAYAk")); // true
+console.log(estPalindrome("Bora-Bora")); // false
+
+
